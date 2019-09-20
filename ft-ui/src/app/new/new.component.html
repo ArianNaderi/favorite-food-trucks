@@ -1,0 +1,33 @@
+<div *ngIf="!name; else forminfo">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+        <h1>Add a Food Truck!</h1>
+        <label>Name
+          <input type="text" formControlName="name">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['name'].valid">You must specify a name between 1 and 30 characters.</div>
+
+        <label>Address
+          <input type="text" formControlName="address">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['address'].valid">You must specify an address between 3 and 40 characters.</div>
+        
+        <input type="submit" class="button expanded" value="Add Truck" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<ng-template #forminfo>
+  <div class="form-container">
+    <div class="row columns">
+        <h1>Truck Created!</h1>
+        <p>Name: {{ name }}</p>
+        <p>Address: {{ address }}</p>
+    </div>
+  </div>
+</ng-template>
+
+

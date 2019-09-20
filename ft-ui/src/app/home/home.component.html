@@ -1,0 +1,12 @@
+<h1>Food Trucks</h1>
+
+<ul *ngIf="trucks"> 
+	<li *ngFor="let truck of trucks">
+		<p class="name">{{ truck.name }}</p>
+		<p class="address">{{ truck.address }}</p>
+		<agm-map [latitude]="truck.latitude" [longitude]="truck.longitude">
+			<agm-marker [latitude]="truck.latitude" [longitude]="truck.longitude"></agm-marker>
+		</agm-map>
+		<button (click)="delete(truck.id)" class="button expanded">Delete</button>
+	</li>
+</ul>

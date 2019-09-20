@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+
+$primary: #ffbf00;
+$secondary: #55a9f2;
+$tertiary: #042394;
+
+
+.button {
+    margin-top: 1rem;
+    background: $primary;
+    color:black;
+    &:hover {
+        background: darken($primary, 10%);
+        color:$tertiary;
+    }
+}
+
+body {
+    background: $secondary;
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 22px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: $primary;
+    padding: 1em 0;
+
+    a {
+        color: $tertiary;
+        text-decoration: none;
+    }
+    a.logo {
+        font-weight: bold;
+    }
+
+    nav {
+        float: right;
+        
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+
+            li a {
+                padding: 1em;
+
+                &:hover {
+                    background: darken($primary, 10%);
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    margin-top: 2em;
+    color:$tertiary;
+}
